@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
@@ -7,7 +6,7 @@ function App() {
       {/* container start */}
       <div className="header flex justify-between border-b border-slate-300 py-3 text-sm">
         <div className="flex gap-8">
-          <a className="text-lime-700 font-semibold" href="#" >Chat with us</a>
+          <a className="text-lime-700 font-semibold" href="/#" >Chat with us</a>
           <p>+62 812 7817 3815</p>
           <p>info@leumangshop.com</p>
         </div>
@@ -42,14 +41,14 @@ function App() {
       {/* Menu */}
       <div className="flex bg-gray-100 justify-center border-slate-300 py-4 mb-14">
         <ul className="flex gap-9 font-poppins">
-          <li><a href="#" className="flex">Bakery<img alt="" src="/images/chevron.png" className="ml-1 object-contain" /></a></li>
-          <li><a href="#" className="flex">Fruit and vegetables<img alt="" src="/images/chevron.png" className="ml-1 object-contain" /></a></li>
-          <li><a href="#" className="flex">Meat and Fish<img alt="" src="/images/chevron.png" className="ml-1 object-contain" /></a></li>
-          <li><a href="#" className="flex">Drinks<img alt="" src="/images/chevron.png" className="ml-1 object-contain" /></a></li>
-          <li><a href="#" className="flex">Kitchen<img alt="" src="/images/chevron.png" className="ml-1 object-contain" /></a></li>
-          <li><a href="#" className="flex">Special nutrition<img alt="" src="/images/chevron.png" className="ml-1 object-contain" /></a></li>
-          <li><a href="#" className="flex">Baby<img alt="" src="/images/chevron.png" className="ml-1 object-contain" /></a></li>
-          <li><a href="#" className="flex">Pharmacy<img alt="" src="/images/chevron.png" className="ml-1 object-contain" /></a></li>
+          <li><a href="/#" className="flex">Bakery<img alt="" src="/images/chevron.png" className="ml-1 object-contain" /></a></li>
+          <li><a href="/#" className="flex">Fruit and vegetables<img alt="" src="/images/chevron.png" className="ml-1 object-contain" /></a></li>
+          <li><a href="/#" className="flex">Meat and Fish<img alt="" src="/images/chevron.png" className="ml-1 object-contain" /></a></li>
+          <li><a href="/#" className="flex">Drinks<img alt="" src="/images/chevron.png" className="ml-1 object-contain" /></a></li>
+          <li><a href="/#" className="flex">Kitchen<img alt="" src="/images/chevron.png" className="ml-1 object-contain" /></a></li>
+          <li><a href="/#" className="flex">Special nutrition<img alt="" src="/images/chevron.png" className="ml-1 object-contain" /></a></li>
+          <li><a href="/#" className="flex">Baby<img alt="" src="/images/chevron.png" className="ml-1 object-contain" /></a></li>
+          <li><a href="/#" className="flex">Pharmacy<img alt="" src="/images/chevron.png" className="ml-1 object-contain" /></a></li>
         </ul>
       </div>
       {/* pilihan */}
@@ -58,25 +57,25 @@ function App() {
           <div className="w-full mb-10">
             <h1 className="font-semibold  mb-2">Categories</h1>
             <div className="mb-2">
-              <a href="#" className=" flex justify-between">
+              <a href="/#" className=" flex justify-between">
                 <span>Bolu</span>
                 <span className="text-lime-700 font-semibold bg-emerald-100 rounded-lg py-1 px-2">320</span>
               </a>
             </div>
             <div className="mb-2">
-              <a href="#" className=" flex justify-between">
+              <a href="/#" className=" flex justify-between">
                 <span>Mie</span>
                 <span className="text-lime-700 font-semibold bg-emerald-100 rounded-lg py-1 px-2" >112</span>
               </a>
             </div>
             <div className="mb-2">
-              <a href="#" className=" flex justify-between">
+              <a href="/#" className=" flex justify-between">
                 <span>Pizza</span>
                 <span className="text-lime-700 font-semibold bg-emerald-100 rounded-lg py-1 px-2">32</span>
               </a>
             </div>
             <div className="mb-2">
-              <a href="#" className=" flex justify-between">
+              <a href="/#" className=" flex justify-between">
                 <span>Dessert</span>
                 <span className="text-lime-700 font-semibold bg-emerald-100 rounded-lg py-1 px-2">48</span>
               </a>
