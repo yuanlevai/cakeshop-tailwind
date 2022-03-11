@@ -343,7 +343,7 @@ function App() {
             </div>
           </div>
           <div className="w-full flex justify-center items-center">
-            <a className="flex bg-lime-600 hover:bg-lime-500 outline outline-lime-700 hover:outline hover:outline-lime-600 rounded-xl py-2 px-2 text-white mt-12 font-bold"> Show More Products <img alt="" src="/images/chevron-white.png" className="ml-1 object-contain" /></a>
+            <a href="/#" className="flex bg-lime-600 hover:bg-lime-500 outline outline-lime-700 hover:outline hover:outline-lime-600 rounded-xl py-2 px-2 text-white mt-12 font-bold"> Show More Products <img alt="" src="/images/chevron-white.png" className="ml-1 object-contain" /></a>
           </div>
         </div>
       </div>
