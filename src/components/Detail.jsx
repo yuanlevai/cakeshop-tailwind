@@ -5,7 +5,7 @@ import products from "../services/data/product";
 
 const Detail = () => {
     const params = useParams();
-    const item = products.filter(element => element.name == params.productName); 
+    const item = products.filter(element => element.name === params.productName); 
     return (
         <Layout>
             <ProductCard item={item[0]}/>

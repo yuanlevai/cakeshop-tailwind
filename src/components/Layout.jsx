@@ -1,6 +1,6 @@
 import MainMenu from './MainMenu';
-import ProductCard from './ProductCard';
-import products from '../services/data/product';
+// import ProductCard from './ProductCard';
+// import products from '../services/data/product';
 
 const Layout = (props) => {
   return (
