@@ -1,8 +1,32 @@
+import { useState } from 'react';
 import ProductCard from './ProductCard';
 import products from '../services/data/product';
 import Layout from './Layout';
+import categories from '../services/data/categories';
 
 const Home = () => {
+    const [product, setProduct] = useState(products);
+    const [categorySelected, setCategorySelected] = useState("all")
+
+    const handleCategories = (e) => {
+        const currentCategorySelected = e.target.id;
+        setCategorySelected(currentCategorySelected);
+        if (currentCategorySelected === "all") {
+            setProduct(products)
+        } else {
+            const productByCategory = products.filter((item, index) => item.category === currentCategorySelected)
+            setProduct(productByCategory)
+        }
+    }
+
+    const handleOrder = (e) => {
+        const orderBySelected = e.target.value;
+
+        if (orderBySelected === "termurah") {
+            const orderProduct = products.sort((a, b) => a.originalPrice - b. originalPrice);
+            setProduct(orderProduct);
+        }
+    }
     return (
         <Layout>
             {/* main */}
@@ -10,48 +34,45 @@ const Home = () => {
                 <div className="w-1/5 mr-5 px3 font-poppins">
                     <div className="w-full mb-10">
                         <h1 className="font-semibold  mb-2">Categories</h1>
-                        <div className="mb-2">
-                            <a href="/#" className=" flex justify-between">
-                                <span>Bolu</span>
-                                <span className="text-lime-700 font-semibold bg-emerald-100 rounded-lg py-1 px-2">320</span>
-                            </a>
-                        </div>
-                        <div className="mb-2">
-                            <a href="/#" className=" flex justify-between">
-                                <span>Mie</span>
-                                <span className="text-lime-700 font-semibold bg-emerald-100 rounded-lg py-1 px-2" >112</span>
-                            </a>
-                        </div>
-                        <div className="mb-2">
-                            <a href="/#" className=" flex justify-between">
-                                <span>Pizza</span>
-                                <span className="text-lime-700 font-semibold bg-emerald-100 rounded-lg py-1 px-2">32</span>
-                            </a>
-                        </div>
-                        <div className="mb-2">
-                            <a href="/#" className=" flex justify-between">
-                                <span>Dessert</span>
-                                <span className="text-lime-700 font-semibold bg-emerald-100 rounded-lg py-1 px-2">48</span>
+                        {categories.map((item, index) => {
+                            return (
+                            <div className="m-1">
+                                <a href="/#" className={`flex justify-between ${item === categorySelected ? "bg-gray-200 rounded-lg pl-1 " : ""}`} >
+                                    <span className="hover:text-lime-700 " onClick={(e) => handleCategories(e)} id={item}>{item}</span>
+                                    <span className="text-lime-700 font-semibold bg-emerald-100 rounded-lg py-1.5 px-1.5">
+                                        {products.filter((product, productIndex) => product.category === item).length}
+                                    </span>
+                                </a>
+                            </div>
+                            )
+                        })}
+                        <div className="m-1">
+                            <a href="/#" className={`flex justify-between ${"all" === categorySelected ? "bg-gray-200 rounded-lg pl-1 " : ""}`}>
+                                <span className="hover:text-gray-600" onClick={(e) => handleCategories(e)} id="all">All</span>
+                                <span className="text-lime-700 font-semibold bg-emerald-100 rounded-lg py-1.5 px-1.5">
+                                    {products.length}
+                                </span>
                             </a>
                         </div>
                     </div>
+
                     <div className="w-full mb-10">
                         <h1 className="font-semibold  mb-2">Order by</h1>
                         <div className="items-center">
                             <label className="inline-flex items-center mt-3">
-                                <input type="checkbox" className="h-5 w-5 accent-lime-600" />
+                                <input type="radio" className="h-5 w-5 accent-lime-600" name='order' value="alphabet" onChange={(e) => handleOrder(e)}/>
+                                <span className="ml-2 text-gray-900" >Alphabet</span>
+                            </label>
+                        </div>
+                        <div classNameName="items-center">
+                            <label className="inline-flex items-center mt-3">
+                                <input type="radio" className="h-5 w-5 accent-lime-600" name='order'  onChange={(e) => handleOrder(e)}  value="termurah"/>
                                 <span className="ml-2 text-gray-900">Termurah</span>
                             </label>
                         </div>
                         <div classNameName="items-center">
                             <label className="inline-flex items-center mt-3">
-                                <input type="checkbox" className="h-5 w-5 accent-lime-600" />
-                                <span className="ml-2 text-gray-900">Terlaris</span>
-                            </label>
-                        </div>
-                        <div classNameName="items-center">
-                            <label className="inline-flex items-center mt-3">
-                                <input type="checkbox" className="h-5 w-5 accent-lime-600" />
+                                <input type="radio" className="h-5 w-5 accent-lime-600" name='order' onChange={(e) => handleOrder(e)}  value="termurah"/>
                                 <span className="ml-2 text-gray-900">Termahal</span>
                             </label>
                         </div>
@@ -144,7 +165,7 @@ const Home = () => {
                 <div className="w-4/5">
                     <div className=' flex flex-wrap mb-4 justify-center'>
                         <div className="flex flex-wrap justify-center gap-6">
-                            {products.map((item, index) => {
+                            {product.map((item, index) => {
                                 return <ProductCard item={item} key={index} />
                             })}
                         </div>
